@@ -3,26 +3,26 @@
 using namespace std;
 
 int main() {
-  vector<int> sec = {5,6,3,2,34,65,32,67,4,32,57, -1};
+  vector<int> sec = {5,6,3,2,34,65,32,67,4,32,57,-1};
   int size = sec.size();
-  int j, x, med, ini, fin;
-for (int i = 1; i < size; i++ ) {
-   j = i ;
-   x = sec[i] ;
-   ini = 0 ; fin = i-1; //comprueba del inicio a ese -1
+  int j, valoracolocar, med, ini, fin;
+  //busca justo la posición del elemento inmediatamente menor al que queremos
+for (int posvalacolocar = 1; posvalacolocar<size;posvalacolocar++) {
+   j = posvalacolocar ;
+   valoracolocar = sec[posvalacolocar] ;
+   ini = 0 ; fin = posvalacolocar-1; 
    while ( ini <= fin ) {
       med = (ini+fin)/2; 
-      if (sec[med] < x)
+      if (sec[med] < valoracolocar)
          ini = med+1;
       else
          fin = med-1;
    } 
-   for (int j = i-1; j >= ini; j--)
-      sec[j+1] = sec[j] ;
-   sec[ini] = x ;
+  //de atras hacia adelante rodar hasta ini (donde se coloca)
+   for (int j = posvalacolocar-1; j >= ini; j--)
+      sec[j+1] = sec[j] ; 
+   sec[ini] = valoracolocar ;
 } 
   for(int i = 0; i < size; i++) {
     cout << sec[i] << ' ';
   }
-  return 0;
-}
