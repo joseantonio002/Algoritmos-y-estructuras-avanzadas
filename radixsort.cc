@@ -4,6 +4,13 @@
 #include <cmath>
 using namespace std;
 
+void show(vector<int> v) {
+  for(int i = 0; i < v.size(); i++) {
+    cout << v[i] << ' ';
+  }
+  cout << endl;
+}
+
 int count_digit(int number) {
   return int(log10(number) + 1);
 }
@@ -61,52 +68,71 @@ void radixsort(vector<int>& cola, int size) {
       }
       copy[i] = (copy[i]/10);
     }
-    /*
     cola.clear();
-    for(int i = 0; i < size; i++) {
+    for(int i = 0; i < 10; i++) {
       switch(i) {
         case 0:
-          cola.push_back(c0[0]);
-          c0.erase(c0.begin());
+          for(int i = 0; i < c0.size(); i++) {
+            cola.push_back(c0[i]);      
+          }
+          c0.clear();
           break;
         case 1:
-          cola.push_back(c1[0]);
-          c1.erase(c1.begin());
+          for(int i = 0; i < c1.size(); i++) {
+            cola.push_back(c1[i]);      
+          }
+          c1.clear();
           break;
         case 2:
-          cola.push_back(c2[0]);
-          c2.erase(c2.begin());
+          for(int i = 0; i < c2.size(); i++) {
+            cola.push_back(c2[i]);      
+          }
+          c2.clear();
           break;
         case 3:
-          cola.push_back(c3[0]);
-          c3.erase(c3.begin());
+          for(int i = 0; i < c3.size(); i++) {
+            cola.push_back(c3[i]);      
+          }
+          c3.clear();
           break;
         case 4:
-          cola.push_back(c4[0]);
-          c4.erase(c4.begin());
+          for(int i = 0; i < c4.size(); i++) {
+            cola.push_back(c4[i]);      
+          }
+          c4.clear();
           break;
         case 5:
-          cola.push_back(c5[0]);
-          c5.erase(c5.begin());
+          for(int i = 0; i < c5.size(); i++) {
+            cola.push_back(c5[i]);      
+          }
+          c5.clear();
           break;
         case 6:
-          cola.push_back(c6[0]);
-          c6.erase(c6.begin());
+          for(int i = 0; i < c1.size(); i++) {
+            cola.push_back(c6[i]);      
+          }
+          c6.clear();
           break;
         case 7:
-          cola.push_back(c7[0]);
-          c7.erase(c7.begin());
+          for(int i = 0; i < c7.size(); i++) {
+            cola.push_back(c7[i]);      
+          }
+          c7.clear();
           break;
         case 8:
-          cola.push_back(c8[0]);
-          c8.erase(c8.begin());
+          for(int i = 0; i < c8.size(); i++) {
+            cola.push_back(c8[i]);      
+          }
+          c8.clear();
           break;
         case 9:
-          cola.push_back(c9[0]);
-          c9.erase(c9.begin());
+          for(int i = 0; i < c9.size(); i++) {
+            cola.push_back(c9[i]);      
+          }
+          c9.clear();
           break;
       }
-    }*/
+    }
   }
 }
 
@@ -114,5 +140,6 @@ void radixsort(vector<int>& cola, int size) {
 int main() {
   vector<int> v = {45,432,121,34,5,3,23,34432};
   radixsort(v,v.size());
+  show(v);
   return 0;
 }
