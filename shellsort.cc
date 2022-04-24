@@ -2,10 +2,7 @@
 #include <vector>
 using namespace std;
 
-int main() {
-  float delta;
-  cin >> delta;
-  vector<int> vector = {452,1324,12,1243,45,0,2};
+void shellsort(vector<int>& vector, float delta) {
   int size = vector.size(), factor;
   factor = delta * size;
   while(factor > 0) {
@@ -19,8 +16,14 @@ int main() {
     }
     factor = factor * delta;
   }
+}
 
-  for(int i = 0; i < size; i++) {
+int main() {
+  float delta;
+  cin >> delta;
+  vector<int> vector = {452,1324,12,1243,45,0,2};
+  shellsort(vector, delta);
+  for(int i = 0; i < vector.size(); i++) {
     cout << vector[i] << ' ';
   }
   cout << endl;
