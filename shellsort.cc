@@ -9,11 +9,13 @@ int main() {
   int size = vector.size(), factor;
   factor = delta * size;
   while(factor > 0) {
-    cout << "factor: " << factor << endl;
-    for(int i = 0; (i+factor) < size; i++) {
-      if(vector[i+factor] < vector[i]) {
-        swap(vector[i+factor], vector[i]);
+    for(int i = factor; i < size; i++) {
+      int tempt = vector[i], j;
+      for(j = i; j >= factor && vector[j-factor]>tempt; 
+      j -= factor) {
+        vector[j] = vector[j-factor];
       }
+      vector[j] = tempt;
     }
     factor = factor * delta;
   }
