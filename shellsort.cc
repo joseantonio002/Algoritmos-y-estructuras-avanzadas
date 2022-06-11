@@ -8,6 +8,7 @@ void shellsort(vector<int>& vector, float delta) {
   while(factor > 0) {
     for(int i = factor; i < size; i++) {
       int tempt = vector[i], j;
+      //ver video https://www.geeksforgeeks.org/shellsort/
       //mientras que queden posiciones detras (j >= factor) y el valor de la posición - factor este desordenado
       for(j = i; j >= factor && vector[j-factor]>tempt; 
       j -= factor) {
