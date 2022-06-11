@@ -49,7 +49,7 @@ void Mezcla (vector<int>& sec, int ini,int cen,int fin){
     }
     else { 
       aux[k] = sec[j];
-      j = j - 1;
+      j++;
     }
   }
   for (int k = ini; k <= fin; k++)
